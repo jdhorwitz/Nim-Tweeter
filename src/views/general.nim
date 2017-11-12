@@ -16,9 +16,7 @@
   </head>
 
   <body>
-    <div id="main">
-      ${body}
-    </div>
+    ${body}
   </body>
 </html>
 #end proc
@@ -42,7 +40,7 @@
 </div>
 <div id="newMessage">
   <span>New message</span>
-  <form action="createMessage" metho="post">
+  <form action="createMessage" method="post">
     <input type="text" name="message">
     <input type="hidden" name="username" value="${$!username}">
     <input type="submit" value="Tweet">

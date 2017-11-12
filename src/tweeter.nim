@@ -30,4 +30,12 @@ routes:
     db.post(message)
     redirect("/")
 
+  get "/@name":
+    var user: User
+    if not db.findUser(@"name", user):
+      halt "User not found"
+
+    let messages = db.findMessages(@[user.username])
+    resp renderMain(renderUser(user) & renderMessages(messages))
+
 runForever()
